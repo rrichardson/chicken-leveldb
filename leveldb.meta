@@ -1,0 +1,64 @@
+(
+(license "BSD")
+
+; A category under which the egg should be listed on the eggs index page (required).
+;
+; Pick one from the list of categories for your egg and enter it here.
+;
+; Syntax:
+;          (category SYMBOL)
+;
+; Example:
+;
+;          (category web)
+(category Databases)
+
+; Any extensions needed to build and use this extension. (optional)
+;
+; A list of eggs your egg depends on.  If none, you can omit this declaration
+; altogether. 'depends' is an alias to 'needs'.
+; Notice that you should NOT put Chicken units (e.g., srfi-1, srfi-13
+; and many others) in 'needs' or in 'depends'.
+;
+; Syntax:
+;          (needs EXTENSION-ID ...)
+;
+; This should normally be the raw extension-identifier, the same that
+; you would use in a require-extension form. Alternatively, EXTENSION-ID
+; may be an arbitrary Scheme expression that is evaluated and should
+; return a list of extension-ids. This is intended to test the executing
+; system for particular platform- or installation-specific features before
+; computing a set of required extensions to be available before the
+; installation of the original extension commences.
+;
+; Example:
+;
+;          (needs sandbox syntax-case)
+
+; Hint a dependency for a non scheme library to the user. The LIB ... is a free
+; form clause that is displayed with chicken-install's -show-foreign-depends
+; switch. It is expected to be one entry per external dependency.
+(foreign-depends libleveldb)
+
+; A list of eggs required for TESTING ONLY. (optional)
+;
+; See the 'Tests' section.
+;
+; Just like 'needs' and 'depends', 'test-depends' should NOT contain
+; Chicken units.
+;
+; Syntax:
+;          (test-depends EXT ...)
+;
+;
+; Example:
+;
+;          (test-depends test)
+(test-depends test)
+
+; The author, optionally with an e-mail address, if desired (required).
+(author "Rick Richardson")
+
+; A short description of the extension (required).
+(synopsis "Bindings for Google's LevelDB. Incomplete implementation based on leveldb's C-API wrapper of the C++ API, which is also incomplete. ping the author(s/ /./)@gmail.com for enhancement requests, or just fork on github."))
+
